@@ -1,27 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import * as Marky from "../components/Marky.md"
+import * as Marky from "../components/Marky.md";
 ---
 
-<Layout title="Iterativ Innovasjon" >
-    <div class="reveal">
-        <div class="slides">
-            <section>Slide 1</section>
-            <section>Slide 2</section>
-            <section data-markdown>
-                <textarea data-template>{Marky.rawContent()}</textarea>
-            </section>
-        </div>
+<Layout title="Iterativ Innovasjon">
+  <div class="reveal">
+    <div class="slides">
+      <section>Slide 1</section>
+      <section>Slide 2</section>
     </div>
+  </div>
 </Layout>
 <script type="module">
-    import Reveal from "/Iterative-Innovasjon/node_modules/reveal.js/dist/reveal.esm.js";
-    import Markdown from "/Iterative-Innovasjon/node_modules/reveal.js/plugin/markdown/markdown.esm.js";
+  import Reveal from "/Iterative-Innovasjon/node_modules/reveal.js/dist/reveal.esm.js";
+  import Markdown from "/Iterative-Innovasjon/node_modules/reveal.js/plugin/markdown/markdown.esm.js";
 
-    Reveal.initialize({
-        plugins: [Markdown],
-    });
-
+  Reveal.initialize({
+    plugins: [Markdown],
+  });
 </script>
 
 <style></style>

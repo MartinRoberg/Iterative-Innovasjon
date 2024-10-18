@@ -1,7 +1,7 @@
 ---
-const {rawMarkdownContent} = Astro.props;
+const { rawMarkdownContent } = Astro.props;
 ---
 
-<section data-markdown>
-    <textarea data-template>{rawMarkdownContent}</textarea>
+<section data-markdown data-separator-notes="^Note:">
+  <textarea data-template>{rawMarkdownContent.rawContent()}</textarea>
 </section>

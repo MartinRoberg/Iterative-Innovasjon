@@ -1,24 +1,57 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import * as Marky from "../components/Marky.md";
+
+import * as svgTest from "../Svgs/Drawing 2024-10-16 10.24.49.svg";
+import FirstIteration from "../Svgs/FirstIteration.astro";
+import MarkdownSection from "../components/MarkdownSection.astro";
+
+import * as IntroductionMD from "../markdownSlides/1-Introduction.md";
+import * as ChallengesMD from "../markdownSlides/2-Challenges.md";
+import * as Iter1MD from "../markdownSlides/3-Iter1.md";
+import * as Iter2MD from "../markdownSlides/4-Iter2.md";
+import * as Iter3MD from "../markdownSlides/5-Iter3.md";
+import * as ConclusionMD from "../markdownSlides/6-Conclusion.md";
 ---
 
 <Layout title="Iterativ Innovasjon">
   <div class="reveal">
     <div class="slides">
       <section>
-        <h2>Iterativ innovasjon</h2>
-        <p style="font-size: 2.2rem">
-          En reise fra treg til rask datamigrering
-        </p>
+        <h1>Iterativ Innovasjon</h1>
+        <footer>En reise fra treg til rask datamigrering</footer>
       </section>
-      <section>Slide 2</section>
+      <MarkdownSection rawMarkdownContent={IntroductionMD} />
+      <!--
+      <section data-auto-animate><h2>Agenda</h2></section>
+      <section data-auto-animate>
+        <h2>Agenda</h2>
+        <ul>
+          <li class="fragment fade-up">Introduksjon</li>
+          <li class="fragment fade-up">Utfordringer</li>
+          <li class="fragment fade-up">Iterasjon 1: Feil antagelsen</li>
+          <li class="fragment fade-up">Iterasjon 2: Vekk med FHIR</li>
+          <li class="fragment fade-up">Iterasjon 3: Pure-SQL</li>
+          <li class="fragment fade-up">Konklusjon</li>
+        </ul>
+      </section>
+      -->
+
+      <MarkdownSection rawMarkdownContent={ChallengesMD} />
+      <MarkdownSection rawMarkdownContent={Iter1MD} />
+      <MarkdownSection rawMarkdownContent={Iter2MD} />
+      <MarkdownSection rawMarkdownContent={Iter3MD} />
+      <MarkdownSection rawMarkdownContent={ConclusionMD} />
+
+      <section>
+        <h1>Takk for meg!</h1>
+        <footer>Spørsmål?</footer>
+      </section>
     </div>
   </div>
 </Layout>
 <script is:inline>
   Reveal.initialize({
-    plugins: [RevealMarkdown],
+    plugins: [RevealMarkdown, RevealNotes],
   });
 </script>
 
